@@ -7,7 +7,7 @@ from openpyxl.workbook import Workbook
 from openpyxl import load_workbook
 
 driver = webdriver.Chrome()
-url = "https://www.news.ro/sport/"
+url = "https://www.news.ro/sport/?p=67"
 
 #Create a workbook obj
 #wb = Workbook()
@@ -21,7 +21,7 @@ ws = wb.active
 
 def main():
     news = []
-    sentence_count = 2400
+    sentence_count = 3035
     loop_is_continue = True
     main_page = 1
 
@@ -68,7 +68,7 @@ def main():
         driver.find_element(By.XPATH, "/html/body/div[7]/div/main/nav/ul/li[7]/a").click()
         time.sleep(4)
 
-        if sentence_count >= 3000:
+        if sentence_count >= 3100:
             loop_is_continue = False
 
         main_page += 1
